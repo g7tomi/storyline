@@ -16,6 +16,25 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 	http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
+	<context:component-scan base-package="com.storyline.user.controller">
+		<context:exclude-filter expression="org.springframework.stereotype.Controller"
+			type="annotation" />
+	</context:component-scan>
+
+	<context:component-scan base-package="com.storyline.todo.service.impl">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<!-- 
+	<context:component-scan base-package="com.storyline.todo.dao.impl">
+	<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+	</context:component-scan>
+	<mybatis:scan base-package="com.storyline.todo.dao.mappers" />
+ -->
+
+
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 	<mvc:resources mapping="/resources/**" location="/resources/" />
