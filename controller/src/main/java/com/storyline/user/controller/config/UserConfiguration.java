@@ -12,7 +12,7 @@ import com.storyline.user.controller.UserController;
 @Import(AppConfig.class)
 public class UserConfiguration {
 	@Bean
-	public UserController getMyController(
+	public UserController getUserController(
 			TodoService todoService
 			) {
 		 return new UserController(todoService);

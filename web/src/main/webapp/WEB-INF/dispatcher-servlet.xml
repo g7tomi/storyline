@@ -20,7 +20,11 @@
 		<context:exclude-filter expression="org.springframework.stereotype.Controller"
 			type="annotation" />
 	</context:component-scan>
-
+	
+	
+	<context:component-scan base-package="com.storyline.home.controller">
+	</context:component-scan>
+	
 	<context:component-scan base-package="com.storyline.todo.service.impl">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
@@ -38,6 +42,7 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/htmlcontent/**" location="/htmlcontent/" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
