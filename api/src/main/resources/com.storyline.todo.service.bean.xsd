@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://com/storyline/todo/service/bean" xmlns="http://com/storyline/todo/service/bean"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+	elementFormDefault="qualified"
+	xmlns:user="http://com/storyline/user/bean"
+	>
+
+		<xsd:import namespace="http://com/storyline/user/bean"
+		schemaLocation="com.storyline.user.bean.xsd" />
+
+	<xsd:complexType name="GetUsersServiceResponse">
+		<xsd:sequence>
+			<xsd:element name="users" type="user:User"
+				minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GetUserServiceRequest">
+		<xsd:sequence>
+			<xsd:element name="username" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+</xsd:schema>

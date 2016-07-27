@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 import com.storyline.config.AppConfig;
-import com.storyline.todo.service.TodoService;
+import com.storyline.todo.service.UserService;
 import com.storyline.user.controller.UserController;
 
 @Configuration
@@ -13,9 +13,9 @@ import com.storyline.user.controller.UserController;
 public class UserConfiguration {
 	@Bean
 	public UserController getUserController(
-			TodoService todoService
+			UserService userService
 			) {
-		 return new UserController(todoService);
+		 return new UserController(userService);
 	}
 }
 
